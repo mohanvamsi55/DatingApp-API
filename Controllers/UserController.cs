@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatingApp.Api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : BaseApiController
     {
         private readonly DatingAppDbContext _datingAppDbContext;
         public UserController(DatingAppDbContext datingAppDbContext)

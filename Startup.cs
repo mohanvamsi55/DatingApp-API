@@ -1,4 +1,6 @@
 using DatingApp.Api.DataAccess;
+using DatingApp.Api.Interfaces;
+using DatingApp.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,7 @@ namespace DatingApp.Api
         {
             services.AddCors();
             services.AddControllers();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddDbContext<DatingAppDbContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("DbConnectionString")));
             services.AddSwaggerGen(c =>
             {

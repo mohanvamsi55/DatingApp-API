@@ -31,6 +31,7 @@ namespace DatingApp.Api.DataAccess
                     UserName = "Sush Vamc"
                 }
             });
+            modelBuilder.Entity<AppUser>().HasIndex(index => index.UserName).IsUnique();
             base.OnModelCreating(modelBuilder);
         }
     }
